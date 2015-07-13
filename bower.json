@@ -1,0 +1,26 @@
+{
+  "name": "Rachel",
+  "version": "1",
+  "homepage": "https://github.com/WDI-HK-8/UrbanFictionary",
+  "authors": [
+    "Rachel <rachella@gmail.comOB>"
+  ],
+  "description": "Rachel's game",
+  "main": "index.html",
+  "keywords": [
+    "game",
+    "definition",
+    "slang"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}
