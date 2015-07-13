@@ -8,26 +8,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Shopping Cart Page">
     <meta name="author" content="Rachel">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="js/application.js"></script>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
   </head>
-
   <body>
 <!-- Landing Page -->
     <h1>Urban Fictionary</h1>
-      <div>
-        <p>Player 1</p>
-        <p>Player 2</p>
-        <section>
+      <section id="page">
+        <form>
+          <label>Player 1: <input type="text" placeholder="Name" /></label>
+          <button type="button" class="btn">Submit</button><br />     
+          <label>Player 2: <input type="text" placeholder="Name" /></label>
+          <button type="button" class="btn">Submit</button><br />    
+        </form>
+        <p class="introduction">
           Description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        </section>
-       </div>
-       
-<!-- Game Page  -->
-  
+        </p>
+        <button type="button" class="btn btn-lg">Start the Game!</button>
+       </section>   
 
+
+<!-- Game Page  -->
+    <div class="container" id="page">
+      <div class="row">
+  <!-- Player Details     -->
+        <div class="col-xs-3">
+
+        </div>
+  <!-- Main Game       -->
+        <div class="col-xs-6 accordion" id="Q1">
+          <h3> Question 1 </h3>
+            <div class="pane">
+              <h4>Just Ducky</h4>
+              <ul>
+                <li>Choice A</li>
+                <li>Choice B</li>
+                <li>Choice C</li>
+              </ul>
+            </div>
+          <h3> Question 2 </h3>
+            <div class="pane">          
+            </div>
+          <h3> Question 3 </h3>
+            <div class="pane">
+            </div>
+          <h3> Question 4 </h3>
+            <div class="pane">
+            </div>
+          <h3> Question 5 </h3>
+            <div class="pane">
+            </div>
+          <h3> Question 6 </h3>
+            <div class="pane">
+            </div>
+          <h3> Question 7 </h3>
+            <div class="pane">
+            </div>
+          <h3> Question 8 </h3>
+            <div class="pane">
+            </div>
+          <h3> Question 9 </h3>
+            <div class="pane">
+            </div>
+          <h3> Question 10 </h3>
+            <div class="pane">
+            </div>
+          <h3> Question 11 </h3>
+            <div class="pane">
+            </div>
+
+        </div>
+  <!-- Score Keeping       -->
+        <div class="col-xs-3">
+        </div>        
+      </div>
+    </div>
+    
+<!-- Winner Page  -->
+    <div class="container" id="page">
+      <div class="row">
+        <div class="jumbotron">
+          <h1>Player 2 Wins!</h1>
+          <p>Congratulation! Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. </p>
+          <p><a class="btn btn-primary btn-lg" href="#" role="button">Play Again</a></p>
+        </div>
+      </div>
+    </div>  
+
+<!-- Bootstrap JavaScript -->
+<!-- Placed at the end of the document to load the page faster -->
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>    
+    <script type="text/javascript" src="js/application.js"></script>
   </body>
 </html>
-
