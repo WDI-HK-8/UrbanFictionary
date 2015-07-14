@@ -1,3 +1,5 @@
+var addName = $('#1stplayer').val();
+
 $(document).ready (function() {
 	$(".accordion div").slideToggle("fast");
 	$(".accordion h3").click(function () {
@@ -10,9 +12,7 @@ $(document).ready (function() {
 	});	
 
   $(".submit-name").click(function() {
-    var addName = $('#1stplayer').val();
     $('aside').append('<li> + addName + </li>');
   })
 
 });
-
