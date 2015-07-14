@@ -12,7 +12,8 @@ $(document).ready (function() {
 	});	
 
   $(".submit-name").click(function() {
-    $('aside').append('<li> + addName + </li>');
+    var addName = $('#1stplayer').val();
+    $('aside').append('addName');
   })
 
 });
