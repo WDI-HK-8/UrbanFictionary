@@ -1,3 +1,7 @@
+* {
+  font-family: Arial, serif;
+}
+
 section, h1 {
 	text-align: center;
 	margin: 10px;
@@ -42,7 +46,7 @@ label {
 
 .playerNames {
 	background-color: #468966;
-	color: #FFB03B;
+	color: #FFF0A5;
 	height: 300px;
 	width: 200px;
 	margin: 20px auto;
@@ -54,6 +58,11 @@ h3 {
 	border: 1px solid #8E2800;
 	border-radius: 10px;
 }
+
+h4 {
+  text-align: center;
+}
+
 
 .playerScores {
 	background-color: #468966;

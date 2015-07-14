@@ -16,10 +16,10 @@
     <h1>Urban Fictionary</h1>
       <section id="page">
         <form>
-          <label>Player 1: <input type="text" placeholder="Name" name="1stPlayer" /></label>
-          <button type="button" class="btn">Submit</button><br />     
-          <label>Player 2: <input type="text" placeholder="Name" name="2ndPlayer" /></label>
-          <button type="button" class="btn">Submit</button><br />    
+          <label>Player 1: <input id="1stplayer" placeholder="Name" /></label>
+          <button type="button" class="submit-name btn">Submit</button><br />     
+          <label>Player 2: <input id="2ndplayer" placeholder="Name" /></label>
+          <button type="button" class="submit-name btn">Submit</button><br />    
         </form>
         <p class="introduction">
           Description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -34,7 +34,9 @@
   <!-- Player Details     -->
         <div class="col-xs-3">
           <aside class="playerNames">
-
+            <h4>Players</h4>
+            <ul>
+            </ul>
           </aside>
         </div>
   <!-- Main Game       -->
@@ -85,13 +87,10 @@
   <!-- Score Keeping       -->
         <div class="col-xs-3">
           <aside class="playerScores">
-
           </aside>      
         </div>  
-
       </div>
-    </div>
-    
+    </div>  
 <!-- Winner Page  -->
     <div class="container" id="page">
       <div class="row">
