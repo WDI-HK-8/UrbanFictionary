@@ -36,6 +36,34 @@ label {
 	border: none;
 }
 
+.correct-clicked {
+    background: #8E2800; 
+}
+
+.playerNames {
+	background-color: #468966;
+	color: #FFB03B;
+	height: 300px;
+	width: 200px;
+	margin: 20px auto;
+	padding: 10px;	
+	border-radius: 10px;
+}
+
+h3 {
+	border: 1px solid #8E2800;
+	border-radius: 10px;
+}
+
+.playerScores {
+	background-color: #468966;
+	height: 300px;
+	width: 200px;
+	margin: 20px auto;
+	padding: 10px;	
+	border-radius: 10px;
+}
+
 .jumbotron {
 	background-color: #8E2800;
 	color: #FFB03B;
