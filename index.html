@@ -16,15 +16,15 @@
     <h1>Urban Fictionary</h1>
       <section id="page">
         <form>
-          <label>Player 1: <input type="text" placeholder="Name" /></label>
+          <label>Player 1: <input type="text" placeholder="Name" name="1stPlayer" /></label>
           <button type="button" class="btn">Submit</button><br />     
-          <label>Player 2: <input type="text" placeholder="Name" /></label>
+          <label>Player 2: <input type="text" placeholder="Name" name="2ndPlayer" /></label>
           <button type="button" class="btn">Submit</button><br />    
         </form>
         <p class="introduction">
           Description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
         </p>
-        <button type="button" class="btn btn-lg">Start the Game!</button>
+        <button type="button" class="btn btn-lg startingButton">Start the Game!</button>
        </section>   
 
 
@@ -33,54 +33,62 @@
       <div class="row">
   <!-- Player Details     -->
         <div class="col-xs-3">
+          <aside class="playerNames">
 
+          </aside>
         </div>
   <!-- Main Game       -->
         <div class="col-xs-6 accordion" id="Q1">
-          <h3> Question 1 </h3>
-            <div class="pane">
-              <h4>Just Ducky</h4>
-              <ul>
-                <li>Choice A</li>
-                <li>Choice B</li>
-                <li>Choice C</li>
-              </ul>
+          <main>
+            <h3> Question 1 </h3>
+              <div class="pane">
+                <h4>Just Ducky</h4>
+                <ul>
+                  <li>Choice A</li>
+                  <li class="correct">Choice B</li>
+                  <li>Choice C</li>
+                </ul>
+                <button type="button" class="btn">Confirm</button>
+              </div>
+            <h3> Question 2 </h3>
+              <div class="pane">          
+              </div>
+            <h3> Question 3 </h3>
+              <div class="pane">
+              </div>
+            <h3> Question 4 </h3>
+              <div class="pane">
+              </div>
+            <h3> Question 5 </h3>
+              <div class="pane">
+              </div>
+            <h3> Question 6 </h3>
+              <div class="pane">
+              </div>
+            <h3> Question 7 </h3>
+              <div class="pane">
+              </div>
+            <h3> Question 8 </h3>
+              <div class="pane">
+              </div>
+            <h3> Question 9 </h3>
+              <div class="pane">
+              </div>
+            <h3> Question 10 </h3>
+              <div class="pane">
+              </div>
+            <h3> Question 11 </h3>
+              <div class="pane">
             </div>
-          <h3> Question 2 </h3>
-            <div class="pane">          
-            </div>
-          <h3> Question 3 </h3>
-            <div class="pane">
-            </div>
-          <h3> Question 4 </h3>
-            <div class="pane">
-            </div>
-          <h3> Question 5 </h3>
-            <div class="pane">
-            </div>
-          <h3> Question 6 </h3>
-            <div class="pane">
-            </div>
-          <h3> Question 7 </h3>
-            <div class="pane">
-            </div>
-          <h3> Question 8 </h3>
-            <div class="pane">
-            </div>
-          <h3> Question 9 </h3>
-            <div class="pane">
-            </div>
-          <h3> Question 10 </h3>
-            <div class="pane">
-            </div>
-          <h3> Question 11 </h3>
-            <div class="pane">
-            </div>
-
+          </main>
         </div>
   <!-- Score Keeping       -->
         <div class="col-xs-3">
-        </div>        
+          <aside class="playerScores">
+
+          </aside>      
+        </div>  
+
       </div>
     </div>
     
