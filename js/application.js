@@ -3,14 +3,11 @@ $(document).ready (function() {
 	$(".accordion h3").click(function () {
 	    $(this).next(".pane").slideToggle("slow").siblings(".pane:visible").slideUp("slow");
 	});
-
 	$(".startingButton").click(function() {
 		$("html, body").animate({
-			scrollTop: $("#Q1").offset().top
+			scrollTop: $("#q1").offset().top
         }, 1000);
 	});	
-
-	
 
 });
 
