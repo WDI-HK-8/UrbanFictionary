@@ -1,5 +1,7 @@
+/*Body and Landing page */
 * {
   font-family: Arial, serif;
+  color: #FFFFFF;
 }
 
 section, h1 {
@@ -8,73 +10,100 @@ section, h1 {
 	padding: 20px;
 }
 
-h1 {
-	color: #FFB03B;
+h1, label {
+	color: #00D2F1;
 }
+
+h1 {
+    font-size: 60px;
+}
+
 
 body {
-    background-color: #8E2800;	
+    background: url(/assets/images/Background.jpg) no-repeat center center fixed; 
 }
 
-#page {
+#page, #page2 {
     margin: 0px;
     bottom: 0px;
-    height: 800px;
+    height: 1200px;
     width: 100%;
     float: left;
-    background-color: #FFF0A5;
 }
 
-label {
-	font-size: 22px;
+label, .introduction {
+	font-size: 28px;
+  padding: 20px;
+  margin: 0px 150px;  
 }
 
-.introduction {
-	font-size: 22px;
-	padding: 20px;
-	margin: 0px 150px;
+input {
+  color: #000000;
 }
 
 .btn {
-	background-color: #468966;
+	background-color: #FE9601;
 	border: none;
+  margin-top: 150px;
+  width: 250px;
+  height: 70px;
+  font-size: 28px;
 }
 
-.correct-clicked {
-    background: #8E2800; 
+/*Main section*/
+#page2 {
+  background-color: #FFFFFF;
 }
 
-.playerNames {
-	background-color: #468966;
-	color: #FFF0A5;
+.player-names, .player-scores  {
+	background: #FE9601;
+	color: #FFFFFF;
 	height: 300px;
 	width: 200px;
-	margin: 20px auto;
+	margin: 10px auto;
 	padding: 10px;	
 	border-radius: 10px;
+}
+
+
+h2 {
+	background-color: #000000;
+  border: 2px solid #00D2F1;
+	border-radius: 10px;
+  padding: 10px;
 }
 
 h3 {
-	border: 1px solid #8E2800;
-	border-radius: 10px;
+    text-decoration: underline; 
+    text-align: center;
 }
 
-h4 {
-  text-align: center;
+.word {
+  font-size: 35px;
+  text-decoration: underline;
+}
+
+.correct-clicked {
+    background: blue; 
+}
+
+.pane {
+  background-color: #FE9601;
+  padding: 5px;
+  border-radius: 10px;
 }
 
 
-.playerScores {
-	background-color: #468966;
-	height: 300px;
-	width: 200px;
-	margin: 20px auto;
-	padding: 10px;	
-	border-radius: 10px;
-}
-
+/*Winner Section*/
 .jumbotron {
-	background-color: #8E2800;
+  background: url(/assets/images/Background.jpg) no-repeat center center fixed;
 	color: #FFB03B;
 	height: 900px;
 }
+
+li {
+    list-style-type: none;
+    font-size: 25px;
+
+}
+
