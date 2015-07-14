@@ -11,25 +11,9 @@ $(document).ready (function() {
 
   $(".submit-name").click(function() {
     var addName = $('#1stplayer').val();
-    $('aside').append('addName');
+    $('aside').append('<li> + addName + </li>');
   })
 
 });
 
 
-
-// $(function() {
-//      var offset = $("#playerNames").offset();
-//      var topPadding = 10;
-//      // $(window).scroll(function() {
-//      //     $(window).scrollTop() > offset.top) {
-//      //         $("#box").stop().animate({
-//      //             marginTop: $(window).scrollTop() - offset.top + topPadding
-//      //         });
-//      //     });
-//      // });
-//  });
-
-// $("confirm").click(function() {
-// $(.correct).toggleClass("correct-clicked")
-// });
