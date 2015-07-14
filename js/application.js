@@ -13,7 +13,7 @@ $(document).ready (function() {
 
   $(".submit-name").click(function() {
     var addName = $('#1stplayer').val();
-    $('aside').append('addName');
+    $('aside').append('<li>' + addName + '</li>');
   })
 
 });
