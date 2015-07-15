@@ -1,0 +1,108 @@
+/*Body and Landing page */
+* {
+  font-family: Arial, serif;
+  color: #FFFFFF;
+}
+
+section, h1 {
+	text-align: center;
+	margin: 10px;
+	padding: 20px;
+}
+
+h1, label {
+	color: #00D2F1;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+
+body {
+  background: url(/assets/images/Background.jpg) no-repeat center center fixed; 
+}
+
+#page, #page2 {
+  margin: 0px;
+  bottom: 0px;
+  height: 1200px;
+  width: 100%;
+  float: left;
+}
+
+label, .introduction {
+	font-size: 28px;
+  padding: 20px;
+  margin: 0px 150px;  
+}
+
+input {
+  color: #000000;
+}
+
+.btn {
+	background-color: #FE9601;
+	border: none;
+  margin-top: 150px;
+  width: 250px;
+  height: 70px;
+  font-size: 28px;
+}
+
+/*Main section*/
+#page2 {
+  background-color: #FFFFFF;
+}
+
+.player-names, .player-scores  {
+	background: #FE9601;
+	color: #FFFFFF;
+	height: 300px;
+	width: 200px;
+	margin: 10px auto;
+	padding: 10px;	
+	border-radius: 10px;
+}
+
+
+h2 {
+	background-color: #000000;
+  border: 2px solid #00D2F1;
+	border-radius: 10px;
+  padding: 10px;
+}
+
+h3 {
+  text-decoration: underline; 
+  text-align: center;
+}
+
+.word {
+  font-size: 35px;
+  text-decoration: underline;
+}
+
+.correct-clicked {
+  background: blue; 
+}
+
+.pane {
+  background-color: #FE9601;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+
+/*Winner Section*/
+.jumbotron {
+  background: url(/assets/images/Background.jpg) no-repeat center center fixed;
+	color: #FFB03B;
+	height: 900px;
+}
+
+li {
+  list-style-type: none;
+  font-size: 25px;
+}
+
