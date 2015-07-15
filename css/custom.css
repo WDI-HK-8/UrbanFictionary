@@ -71,6 +71,7 @@ h2 {
   border: 2px solid #00D2F1;
 	border-radius: 10px;
   padding: 10px;
+  margin: 20px;
 }
 
 h3 {
@@ -81,6 +82,7 @@ h3 {
 .word {
   font-size: 35px;
   text-decoration: underline;
+  margin: 5px;
 }
 
 li:hover {
@@ -94,7 +96,7 @@ h4 {
   text-align: center;
 }
 
-.generate {
+.next-question {
   color: #000000;
   text-decoration: underline;
   cursor: pointer;
@@ -116,6 +118,6 @@ h4 {
 
 li {
   list-style-type: none;
-  font-size: 25px;
+  font-size: 30px;
 }
 
