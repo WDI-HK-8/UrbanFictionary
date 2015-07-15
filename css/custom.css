@@ -31,10 +31,10 @@ body {
   float: left;
 }
 
-label, .introduction {
+label, .introduction, h4 {
 	font-size: 28px;
   padding: 20px;
-  margin: 0px 150px;  
+  margin: 0px 120px;  
 }
 
 input {
@@ -83,8 +83,21 @@ h3 {
   text-decoration: underline;
 }
 
-.correct-clicked {
-  background: blue; 
+li:hover {
+  color: #000000;
+  outline: dotted red; 
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+h4 {
+  text-align: center;
+}
+
+.generate {
+  color: #000000;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .pane {
