@@ -34,7 +34,11 @@ body {
 label, .introduction, h4 {
 	font-size: 28px;
   padding: 20px;
-  margin: 0px 120px;  
+  margin: 0px 150px;  
+}
+
+#red-pill {
+  color: #FFB03B;
 }
 
 input {
@@ -59,7 +63,7 @@ input {
 	background: #FE9601;
 	color: #FFFFFF;
 	height: 300px;
-	width: 200px;
+	width: 300px;
 	margin: 10px auto;
 	padding: 10px;	
 	border-radius: 10px;
@@ -117,7 +121,9 @@ h4 {
 }
 
 li {
-  list-style-type: none;
+  list-style-type: upper-alpha;
   font-size: 30px;
+  margin: 5px 20px;
+
 }
 
