@@ -6,15 +6,13 @@ $(document).ready (function() {
     if (addName == '' || addName2 == ''){
       alert('C\'mon, both players must have a name!');
     } else {
-      $('aside.player-names').append('<li>' + addName + '</li>' + '<li>' + '' + '</li>');
-      $('aside.player-scores').append('<li>' + addName2 + '</li>' + '<li>' + '' + '</li>');
+      $('aside.player1').append('<li>' + addName + '</li>');
+      $('aside.player2').append('<li>' + addName2 + '</li>');
+    
     $('html, body').animate({
       scrollTop: $('#q1').offset().top
       }, 1000);      
-    }
-    // figure out how to create score and replace above 
-    // var player1Score = $('Player1!!!!!').val();
-    // var player2Score = $('Player2!!!!!').val();
+    };
   }); 
 
   //Option to restart
@@ -29,15 +27,17 @@ $(document).ready (function() {
       });
   });
 
+  $('.next-question').click(function() {
+  loadNewQuestion();
+  fillQuestion(game.currentQuestion);        
+  $('.result').hide();
+  $('.next-question').hide();
+  $('html, body').animate({
+    scrollTop: $('#q1').offset().top
+    }, 500);
 });
 
-  // $('#red-pill').mouseleave(function() { 
-  //     $('#define-pill').hide(); 
-  // });
-
-  // $('#red-pill').mouseenter(function() { 
-  //     $('#define-pill').show();     
-  // });  
+});
 
 
 var Game = function () {
@@ -51,11 +51,14 @@ var rand = function (min, max) {
 };
 
 game.currentQuestion = {};
-game.score = 0;
+game.score1 = 0;
+game.score2 = 0;
+game.player = 1;
+
 game.questions = [
   {
     title: "Just Ducky",
-    possibleAnswers: ["Calm on the surface, paddling like crazy beneath", "Acting like a duck", "Fine and dandy - like Donald"],
+    possibleAnswers: ["Acting like a duck", "Fine and dandy - like Donald"],
     correctAnswer: "Calm on the surface, paddling like crazy beneath",
   }, 
   { 
@@ -131,21 +134,61 @@ function fillQuestion(question) {
 function loadNewQuestion() {
   game.currentQuestion = game.selectRandomQuestion();
   if (game.answeredQuestions.length < game.questions.length) {
-    game.currentQuestion = game.selectRandomQuestion();  
+    while(game.answeredQuestions.indexOf(game.currentQuestion) > -1) {
+      game.currentQuestion = game.selectRandomQuestion();  
+    }
     } else {
-    alert('');
+    alert('That is all, folks!');
     return;
   }
 }
-
-
-function displayScore() {
-  $('.display-score').html(game.score);
+// function displayScore1() {
+//   $('.display-score1').html(game.score);
+// }
+function displayScore1() {
+  $('.display-score1').html(game.score1);
+  }
+function displayScore2() {
+  $('.display-score2').html(game.score2);    
+  }
+var changeColor = function(){
+  if (game.player == '1'){
+    $('.player1').css({
+        'background-color':'#FE9601',
+        'border': '5px solid #9B5B00'});
+    $('.player2').css({'background-color':'#FFBF64',
+        'border': 'none'});
+  } else {
+    $('.player2').css({
+        'background-color':'#FE9601',
+        'border': '5px solid #9B5B00'});
+    $('.player1').css({'background-color':'#FFBF64',
+        'border': 'none'});
+  }
 }
-
 loadNewQuestion();
 fillQuestion(game.currentQuestion);
-displayScore();
+displayScore1();
+displayScore2();
+changeColor();
+
+
+// var userAnswer = $('.choice').click(function(){
+//   game.answeredQuestions.push(game.currentQuestion);  
+//   var userAnswer = $(this).text();
+//   console.log(game.validateAnswer(game.currentQuestion, userAnswer));    
+//   $('.result').show();
+//   $('.next-question').show();  
+//   if (game.validateAnswer(game.currentQuestion, userAnswer)) {
+//     game.score ++;
+//     displayScore1();
+//     $('.result').html('Correct! That is the right');
+//     $('.result').css('color', '#FFDA64');
+//   } else {
+//     $('.result').html('Incorrect. Your answer sucked. The correct answer is:'+ '<br /><br />' + '"' + game.currentQuestion.correctAnswer + '."');
+//     $('.result').css('color', '#F60118');
+//   }; 
+// });
 
 
 var userAnswer = $('.choice').click(function(){
@@ -155,21 +198,29 @@ var userAnswer = $('.choice').click(function(){
   $('.result').show();
   $('.next-question').show();  
   if (game.validateAnswer(game.currentQuestion, userAnswer)) {
-    game.score ++;
-    displayScore();
+    if (game.player == 1) {
+      game.score1 ++;
+      displayScore1();
+      changeColor();
+    } else {
+      game.score2 ++;
+      displayScore2();
+      changeColor();
+    }
     $('.result').html('Correct! That is the right');
     $('.result').css('color', '#FFDA64');
   } else {
     $('.result').html('Incorrect. Your answer sucked. The correct answer is:'+ '<br /><br />' + '"' + game.currentQuestion.correctAnswer + '."');
     $('.result').css('color', '#F60118');
-  }; 
+  };
+  if (game.player == 1) {
+    game.player = 2;
+  } else {
+    game.player = 1;
+  }
 });
 
 
-$('.next-question').click(function() {
-  loadNewQuestion();
-    fillQuestion(game.currentQuestion);        
-    $('.result').hide();
-    $('.next-question').hide();
-});
+
+
 

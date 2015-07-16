@@ -39,15 +39,18 @@ label, .introduction, h4 {
 
 #red-pill {
   color: #FFB03B;
+  text-decoration: underline;
+}
+
+/*#red-pill:hover + #define-pill {
+  display: block;
+  cursor: pointer;
 }
 
 #define-pill {
   display: none;
-}
-
-#red-pill:hover + #define-pill {
-  display: block;
-}
+}*/
+    
 
 input {
   color: #000000;
@@ -67,7 +70,7 @@ input {
   background-color: #FFFFFF;
 }
 
-.player-names, .player-scores  {
+.player1, .player2  {
 	background: #FE9601;
 	color: #FFFFFF;
 	height: 300px;
@@ -79,6 +82,10 @@ input {
   text-align: center;
 }
 
+.yellow {
+  border-radius: 10px;
+  border-color: #00D2F1;
+}
 
 h2 {
 	background-color: #000000;
@@ -93,6 +100,7 @@ h3 {
   text-align: center;
   font-size: 30px;
 }
+
 
 .word {
   font-size: 35px;
