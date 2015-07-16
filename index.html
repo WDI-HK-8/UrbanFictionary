@@ -6,17 +6,19 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Shopping Cart Page">
+    <meta name="description" content="Guessing Game">
     <meta name="author" content="Rachel">
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
+    <link rel="icon" href="assets/images/fav_icon.ico">
   </head>
   <body>
 <!-- Landing Page -->
     <h1>Urban Fictionary</h1>
       <section id="page">
         <p class="introduction">
-          That 
+          Play the game and get <span id="red-pill">red pilled*</span>.<br />
+          (<span id="red-pill">*</span>enlightened; aware of the nature of the universe; a reference to The Matrix where Neo is asked blue pill or red pill?) 
         </p>
         <form>
           <label>Player 1: <input id="1stplayer" placeholder="Name" /></label>  
@@ -39,51 +41,25 @@
   <!-- Main Game       -->
         <div class="col-xs-6 accordion" id="q1">
           <main>
-            <h2> QUESTION 1 </h2>
+            <h2 class="word"></h2>
               <div class="pane">
-                <span class="word">Just Ducky</span>
-                <ul>
-                  <li class="choice">A) Calm on the surface, paddling like crazy beneath.</li>
-                  <li class="choice">B) Just fine and dandy - like Donald.</li>
-                  <li class="choice">C) Pleasing and cute.</li>
+                <ul id="options">
+                  <li class="choice fullAnswer"></li>
+                  <br />  
+                  <li class="choice incorrect"></li>
+                  <br />  
+                  <li class="choice incorrect2"></li>
                 </ul>
+                <h4 class="result"></h4>
+                <h4 class="next-question">Next Question</h4>
               </div>
-            <h2> QUESTION 2 </h2>
-              <div class="pane">          
-              </div>
-            <h2> QUESTION 3 </h2>
-              <div class="pane">
-              </div>
-            <h2> QUESTION 4 </h2>
-              <div class="pane">
-              </div>
-            <h2> QUESTION 5 </h2>
-              <div class="pane">
-              </div>
-            <h2> QUESTION 6 </h2>
-              <div class="pane">
-              </div>
-            <h2> QUESTION 7 </h2>
-              <div class="pane">
-              </div>
-            <h2> QUESTION 8 </h2>
-              <div class="pane">
-              </div>
-            <h2> QUESTION 9 </h2>
-              <div class="pane">
-              </div>
-            <h2> QUESTION 10 </h2>
-              <div class="pane">
-              </div>
-            <h2> QUESTION 11 </h2>
-              <div class="pane">
-            </div>
           </main>
         </div>
   <!-- Score Keeping       -->
         <div class="col-xs-3">
           <aside class="player-scores">
           <h3>SCORE</h3>
+          <div class="display-score"></div>
           </aside>      
         </div>  
       </div>
@@ -94,7 +70,7 @@
         <div class="jumbotron">
           <h1>Player 2 Wins!</h1>
           <p>Congratulation! </p>
-          <p><a class="btn btn-primary btn-lg play-again" role="button">Play Again</a></p>
+          <p><a class="btn play-again" role="button">Play Again</a></p>
         </div>
       </div>
     </div>  
