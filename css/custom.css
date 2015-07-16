@@ -41,6 +41,14 @@ label, .introduction, h4 {
   color: #FFB03B;
 }
 
+#define-pill {
+  display: none;
+}
+
+#red-pill:hover + #define-pill {
+  display: block;
+}
+
 input {
   color: #000000;
 }
@@ -67,6 +75,8 @@ input {
 	margin: 10px auto;
 	padding: 10px;	
 	border-radius: 10px;
+  font-size: 30px;
+  text-align: center;
 }
 
 
@@ -81,6 +91,7 @@ h2 {
 h3 {
   text-decoration: underline; 
   text-align: center;
+  font-size: 30px;
 }
 
 .word {
@@ -121,9 +132,14 @@ h4 {
 }
 
 li {
+  list-style-type: none;
+}
+
+li.choice {
   list-style-type: upper-alpha;
   font-size: 30px;
   margin: 5px 20px;
-
 }
+
+
 
