@@ -6,15 +6,13 @@ $(document).ready (function() {
     if (addName == '' || addName2 == ''){
       alert('C\'mon, both players must have a name!');
     } else {
-      $('aside.player-names').append('<li>' + addName + '</li>' + '<li>' + addName2 + '</li>');
-      $('aside.player-scores').append('<li>' + addName + '</li>' + '<li>' + addName + '</li>' + '<li>' + addName2 + '</li>' + '<li>' + addName + '</li>');
+      $('aside.player1').append('<li>' + addName + '</li>');
+      $('aside.player2').append('<li>' + addName2 + '</li>');
+    
     $('html, body').animate({
       scrollTop: $('#q1').offset().top
       }, 1000);      
-    }
-    // figure out how to create score and replace above 
-    // var player1Score = $('Player1!!!!!').val();
-    // var player2Score = $('Player2!!!!!').val();
+    };
   }); 
 
   //Option to restart
@@ -28,6 +26,16 @@ $(document).ready (function() {
       $('form').each (function() { this.reset();
       });
   });
+  //Next Question
+  $('.next-question').click(function() {
+  loadNewQuestion();
+  fillQuestion(game.currentQuestion);        
+  $('.result').hide();
+  $('.next-question').hide();
+  $('html, body').animate({
+    scrollTop: $('#q1').offset().top
+    }, 500);
+});
 
 });
 
@@ -43,73 +51,65 @@ var rand = function (min, max) {
 };
 
 game.currentQuestion = {};
-game.score = 0;
+game.score1 = 0;
+game.score2 = 0;
+game.player = 1;
+
 game.questions = [
   {
     title: "Just Ducky",
-    possibleAnswers: ["Calm on the surface, paddling like crazy beneath", "Acting like a duck", "Fine and dandy - like Donald"],
+    possibleAnswers: ["Acting like a duck", "Fine and dandy - like Donald"],
     correctAnswer: "Calm on the surface, paddling like crazy beneath",
-    score: 10
   }, 
   { 
     title:'Eye Cabbage',
     correctAnswer:'The complete opposite of eye candy', 
     possibleAnswers: ['A gross eye infection', 'the heart of a cabbage'],
-    score: 10
   }, 
   {
     title:'Defensive Eating', 
     correctAnswer:'Strategically consuming food for the sole purpose of preventing others from getting it', 
     possibleAnswers: ['Eating for the sole purpose of filling the hole in the heart after being oh so wrong', 'To retort after another individual questions your eating habits'],
-    score: 10
   }, 
   {
     title:'Sausage Fear', 
     correctAnswer:'Straight men who are afraid of showing any physical or emotional bond with another man', 
     possibleAnswers: ['Being afraid to see the thingy', 'A preference for hamburgers'],
-    score: 10
   }, 
   {
     title:'Trust Fail', 
     correctAnswer:'A poorly excuted trust fall', 
     possibleAnswers: ['A broken promise', 'Believing in Santa. Oh sorry, Santa isn\'t real.'],
-    score: 10
   }, 
   {
     title:'Cinderfella', 
     correctAnswer:'A man who must be home by midnight', 
     possibleAnswers: ['A guy that likes Cinderella', 'Someone who works in the blue collar industry, like at the mines'],
-    score: 10
   }, 
   {
     title:'Askhole', 
     correctAnswer:'Someone who asks many stupid, pointless or obnoxious questions', 
     possibleAnswers: ['A window to ask questions at the bank', 'The safe replacement word for a swear word'],
-    score: 10
   }, 
   {
     title:'Fling Cleaning', 
     correctAnswer:'When one cleans one\'s room solely because they think they will be getting laid that night', 
     possibleAnswers: ['Cleaning out the booty call contacts off of your phone', 'Half-assed cleaning by throwing around a cloth'],
-    score: 10
   }, 
   {
     title:'Grave Digging', 
     correctAnswer:'Trying to engage in intercourse with a much older person', 
     possibleAnswers: ['Looking for bodies', 'When trying to backpedal on a bad comment but actually making it worst'],
-    score: 10
   }, 
   {
     title:'Bedgasm', 
     correctAnswer:'Feeling of eurphoria experienced when climbing into bed after a long day', 
     possibleAnswers: ['Loss of warm on a cold day when getting out of bed', 'Two beds going at it'],
-    score: 10
   }, 
   {
     title:'Nicholas Cage Syndrome', 
     correctAnswer:'When you have the same facial expression no matter what emotion you\'re supposed to be showing', 
     possibleAnswers: ['An obsession with the actor Nicolas Cage', 'To be incredibly famous for absolute crap'],
-    score: 10
   }
 ];
 game.answeredQuestions = [];
@@ -134,22 +134,42 @@ function fillQuestion(question) {
 function loadNewQuestion() {
   game.currentQuestion = game.selectRandomQuestion();
   if (game.answeredQuestions.length < game.questions.length) {
-    game.currentQuestion = game.selectRandomQuestion();  
+    while(game.answeredQuestions.indexOf(game.currentQuestion) > -1) {
+      game.currentQuestion = game.selectRandomQuestion();  
+    }
     } else {
-    alert("All questions have been answered.");
+    alert('That is all, folks!');
     return;
   }
 }
 
-
-function displayScore() {
-  $('.display-score').html(game.score);
+function displayScore1() {
+  $('.display-score1').html(game.score1);
+  }
+function displayScore2() {
+  $('.display-score2').html(game.score2);    
+  }
+var changeColor = function(){
+  if (game.player == '1'){
+    $('.player1').css({
+        'background-color':'#FE9601',
+        'border': '5px solid #9B5B00'});
+    $('.player2').css({'background-color':'#FFBF64',
+        'border': 'none'});
+  } else {
+    $('.player2').css({
+        'background-color':'#FE9601',
+        'border': '5px solid #9B5B00'});
+    $('.player1').css({'background-color':'#FFBF64',
+        'border': 'none'});
+  }
 }
 
 loadNewQuestion();
 fillQuestion(game.currentQuestion);
-displayScore();
-
+displayScore1();
+displayScore2();
+changeColor();
 
 var userAnswer = $('.choice').click(function(){
   game.answeredQuestions.push(game.currentQuestion);  
@@ -158,21 +178,29 @@ var userAnswer = $('.choice').click(function(){
   $('.result').show();
   $('.next-question').show();  
   if (game.validateAnswer(game.currentQuestion, userAnswer)) {
-    game.score += 10;
-    displayScore();
-    $('.result').html('Yes! Gold star to you, you fantastic sexy know-it-all!');
+    if (game.player == 1) {
+      game.score1 ++;
+      displayScore1();
+      changeColor();
+    } else {
+      game.score2 ++;
+      displayScore2();
+      changeColor();
+    }
+    $('.result').html('Correct! That is the right');
     $('.result').css('color', '#FFDA64');
   } else {
     $('.result').html('Incorrect. Your answer sucked. The correct answer is:'+ '<br /><br />' + '"' + game.currentQuestion.correctAnswer + '."');
     $('.result').css('color', '#F60118');
-  }; 
+  };
+  if (game.player == 1) {
+    game.player = 2;
+  } else {
+    game.player = 1;
+  }
 });
 
 
-$('.next-question').click(function() {
-  loadNewQuestion();
-    fillQuestion(game.currentQuestion);        
-    $('.result').hide();
-    $('.next-question').hide();
-});
+
+
 
