@@ -26,7 +26,7 @@ $(document).ready (function() {
       $('form').each (function() { this.reset();
       });
   });
-
+  //Next Question
   $('.next-question').click(function() {
   loadNewQuestion();
   fillQuestion(game.currentQuestion);        
@@ -142,9 +142,7 @@ function loadNewQuestion() {
     return;
   }
 }
-// function displayScore1() {
-//   $('.display-score1').html(game.score);
-// }
+
 function displayScore1() {
   $('.display-score1').html(game.score1);
   }
@@ -166,30 +164,12 @@ var changeColor = function(){
         'border': 'none'});
   }
 }
+
 loadNewQuestion();
 fillQuestion(game.currentQuestion);
 displayScore1();
 displayScore2();
 changeColor();
-
-
-// var userAnswer = $('.choice').click(function(){
-//   game.answeredQuestions.push(game.currentQuestion);  
-//   var userAnswer = $(this).text();
-//   console.log(game.validateAnswer(game.currentQuestion, userAnswer));    
-//   $('.result').show();
-//   $('.next-question').show();  
-//   if (game.validateAnswer(game.currentQuestion, userAnswer)) {
-//     game.score ++;
-//     displayScore1();
-//     $('.result').html('Correct! That is the right');
-//     $('.result').css('color', '#FFDA64');
-//   } else {
-//     $('.result').html('Incorrect. Your answer sucked. The correct answer is:'+ '<br /><br />' + '"' + game.currentQuestion.correctAnswer + '."');
-//     $('.result').css('color', '#F60118');
-//   }; 
-// });
-
 
 var userAnswer = $('.choice').click(function(){
   game.answeredQuestions.push(game.currentQuestion);  
